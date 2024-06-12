@@ -1,0 +1,163 @@
+{% extends 'main.html' %} {% block content %}
+<div class="predict">
+  <!-- <div class="formtitle"><h2>Check Loan Eligibility Here</h2></div> -->
+  <div class="form">
+    <form method="POST" action="result">
+      {% csrf_token %}
+
+      <h2>Check Your Loan Eligibility Here</h2>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Enter Your Name"
+          name="name"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Gender (Male: 1, Female: 0)"
+          name="gender"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Marital status (Married: 1, Unmarried: 0)"
+          name="married"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Dependents (1, 2 ...)"
+          name="dependents"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Education (Graduate: 1, Not Graduate: 0)"
+          name="education"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Self Employed (Yes: 1, No: 0)"
+          name="selfEmployed"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Applicant Income"
+          name="applicantIncome"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Co-applicant Income"
+          name="coapplicantIncome"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Loan Amount"
+          name="loanAmount"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Loan Amount Term"
+          name="loanAmountTeam"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Credit History"
+          name="creditHistory"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Property Area (Rural:0, Semiurban: 1, Urban:2)"
+          name="propertyArea"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary button" onclick="disclaimerMessage()">Predict</button>
+    </form>
+
+    <div class="result">
+      <h3>Result : {{result}}</h3>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
